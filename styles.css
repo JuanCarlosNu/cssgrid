@@ -3,9 +3,45 @@ padding: 0;
 margin: 0;
 }
 
-body {
+body { 
     background-color:none;
     color: black;
     font-family: 'Roboto Flex', sans-serif;
-    
+    }
+
+.container{
+    width: 90%;   
+    max-width: 1000px;
+    margin: 20px auto;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+    background-color: aqua;
+}
+.container  header,
+.container .photo,
+.container .footer,
+.container .content { 
+    background: #fff;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.container header{
+    background-color: #12203E;
+    color: white;
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+.container main{
+grid-column: span 2;
+
+}
+.container aside{
+    grid-colum: 4 / 5;
+    grid-row: span 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
