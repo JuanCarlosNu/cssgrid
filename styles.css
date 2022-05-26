@@ -45,3 +45,18 @@ grid-column: span 2;
     align-items: center;
     justify-content: center;
 }
+ 
+.widget1, .widget2 {
+        background-color: #12203E;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+}
+.container .footer{
+    background-color: black;
+    color: white;
+    grid-column: span 3;
+
+}
