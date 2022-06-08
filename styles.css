@@ -15,9 +15,15 @@ body {
     margin: 20px auto;
     display: grid;
     grid-gap: 20px;
-    grid-template-columns: repeat(3, 1fr);
+    background-color: #bb2a2a
+    
     grid-template-rows: repeat(4, auto);
-    background-color: #c42f2f
+
+    grid-template-areas: "header header header" 
+                            "main main photo"
+                            "widg1 widg2 widg3"
+                            "footer footer footer";
+   
 }
 .container  header,
 .container .photo,
@@ -26,53 +32,60 @@ body {
     background: #fff;
     padding: 20px;
     border-radius: 4px;
+    text-align: center;
 }
 
-.container header{
+.container .header{
     background-color: #12203E;
     color: white;
-    grid-column-start: 1;
-    grid-column-end: 4;
+    grid-area: header;
 }
 .container main{
-grid-column: span 2;
-
+    grid-area: main;
 }
 .container aside{
-    grid-column: 3 / 4;
-    grid-row: span 2;
+    grid-area: photo;
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
+
+   
+  
     
 
-.widget1, .widget2 {
+.widget1{
+    background-color: #12203E;
+    color: white;
+     grid-area: widg1;
+     text-align: center;
+}
+ .widget2 {
         background-color: #12203E;
         color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        grid-area: widg2;
+        text-align: center;
+     }
 
-}
+
+         
+
+
 .container .footer{
     background-color: black;
     color: white;
-    grid-column: span 3;
-    display: grid;
-    justify-content: center;
-    align-items: center;
+    grid-area: footer;
+
 }
 @media screen and (max-width: 768px){
-.container main {
-    grid-column: 1 / -1;
+    .container{
+        grid-template-areas: "header header header"
+                                "main main main"
+                                "photo photo photo"
+                                "widg1 widg2 widg3"
+                                "footer footer footer";
+    }
+                            
+                                
 }
-.container aside{
-    grid-column: 1 / -1;}
-
-.container .widget1{
-    grid-column: span 2;
-}    
-  
-}
-
